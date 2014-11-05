@@ -2,7 +2,7 @@ package edu.luc.etl.cs313.scala.clickcounter
 package model
 
 /**
- * An mutable bounded counter abstraction.
+ * A mutable bounded counter abstraction.
  *
  * @author laufer
  */
@@ -12,18 +12,12 @@ trait BoundedCounter extends Counter {
 
   def max: Int
 
-  /**
-   * Resets the counter value.
-   */
+  /** Resets the counter value. */
   def reset(): Unit
 
-  /**
-   * Indicates whether the counter is full (at its maximum).
-   */
+  /** Indicates whether the counter is full (at its maximum). */
   def isFull(): Boolean
 
-  /**
-   * Indicates whether the counter is empty (at its minimum).
-   */
+  /** Indicates whether the counter is empty (at its minimum). */
   def isEmpty(): Boolean
 }

@@ -33,9 +33,7 @@ class MainActivity extends Activity with TypedActivity with AbstractAdapter {
     updateView()
   }
 
-  /**
-   * Updates the concrete view from the model.
-   */
+  /** Updates the concrete view from the model. */
   override protected def updateView()  = {
     import scala.language.postfixOps
     // update display
