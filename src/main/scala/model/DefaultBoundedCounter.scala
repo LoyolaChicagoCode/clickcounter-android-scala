@@ -27,19 +27,19 @@ class DefaultBoundedCounter(_min: Int, _max: Int) extends BoundedCounter {
 
   override def max = _max
 
-  override def increment() {
+  override def increment() = {
     assert { dataInvariant && ! isFull }
     value += 1
     assert { dataInvariant }
   }
 
-  override def decrement()  {
+  override def decrement() = {
     assert { dataInvariant && ! isEmpty }
     value -= 1
     assert { dataInvariant }
   }
 
-  override def reset() {
+  override def reset() = {
     value = min
     assert { dataInvariant }
   }

@@ -36,14 +36,12 @@ class AdapterSpecs extends FunSpec with MockitoSugar {
     val mdl = model
     val adapter = new AbstractAdapter {
       override lazy val model = mdl // injected dependency
-      override def updateView() {
-        view.update() // hard-coded dependency
-      }
+      override def updateView() = view.update() // hard-coded dependency
     }
   }
 
-  describe("A clickcounter adapter") ({
-    it("handles onIncrement") ({
+  describe("A clickcounter adapter") {
+    it("handles onIncrement") {
       // create and import fixture
       val f = fixture()
       import f._
@@ -52,8 +50,8 @@ class AdapterSpecs extends FunSpec with MockitoSugar {
       // verify interaction with collaborators
       order.verify(model).increment()
       order.verify(view).update()
-    })
-    it("handles onDecrement") ({
+    }
+    it("handles onDecrement") {
       // create and import fixture
       val f = fixture()
       import f._
@@ -62,8 +60,8 @@ class AdapterSpecs extends FunSpec with MockitoSugar {
       // verify interaction with collaborators
       order.verify(model).decrement()
       order.verify(view).update()
-    })
-    it("handles onReset") ({
+    }
+    it("handles onReset") {
       // create and import fixture
       val f = fixture()
       import f._
@@ -72,6 +70,6 @@ class AdapterSpecs extends FunSpec with MockitoSugar {
       // verify interaction with collaborators
       order.verify(model).reset()
       order.verify(view).update()
-    })
-  })
+    }
+  }
 }

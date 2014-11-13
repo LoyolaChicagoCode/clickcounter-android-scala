@@ -21,13 +21,13 @@ trait AbstractAdapter {
    * usually with the help of the graphical layout editor; the connection also
    * shows up in the XML source of the view layout.
    */
-  def onIncrement(view: View) { model.increment() ; updateView() }
+  def onIncrement(view: View) = { model.increment() ; updateView() }
 
   /** Handles the semantic decrement event. */
-  def onDecrement(view: View) { model.decrement() ; updateView() }
+  def onDecrement(view: View) = { model.decrement() ; updateView() }
 
   /** Handles the semantic decrement event. */
-  def onReset(view: View) { model.reset() ; updateView() }
+  def onReset(view: View) = { model.reset() ; updateView() }
 
   /** Updates the view from the model. */
   protected implicit def updateView()

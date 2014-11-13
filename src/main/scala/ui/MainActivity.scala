@@ -20,21 +20,21 @@ class MainActivity extends Activity with TypedActivity with AbstractAdapter {
   // inject the dependency on the model
   override lazy val model = new DefaultBoundedCounter
 
-  override def onCreate(savedInstanceState: Bundle) {
+  override def onCreate(savedInstanceState: Bundle) = {
     super.onCreate(savedInstanceState)
     Log.i(TAG, "onCreate")
     // inject the (implicit) dependency on the view
     setContentView(R.layout.main)
   }
 
-  override def onStart() {
+  override def onStart() = {
     super.onStart()
     Log.i(TAG, "onStart")
     updateView()
   }
 
   /** Updates the concrete view from the model. */
-  override protected def updateView()  = {
+  override protected def updateView() = {
     import scala.language.postfixOps
     // update display
     findView(TR.textview_value).setText(model.get.toString)
