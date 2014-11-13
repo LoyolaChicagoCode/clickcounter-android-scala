@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lucoodevcourse/clickcounter-android-scala.svg?branch=master)](https://travis-ci.org/lucoodevcourse/clickcounter-android-scala)
+
 # Learning Objectives
 
 This example is intended as a starting point for anyone planning develop
