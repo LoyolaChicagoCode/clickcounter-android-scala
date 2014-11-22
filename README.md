@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/lucoodevcourse/clickcounter-android-scala.svg?branch=master)](https://travis-ci.org/lucoodevcourse/clickcounter-android-scala)
+[![Build Status](https://travis-ci.org/lucoodevcourse/clickcounter-android-scala.svg?branch=master)](https://travis-ci.org/lucoodevcourse/clickcounter-android-scala) 
+[![Coverage Status](https://img.shields.io/coveralls/lucoodevcourse/clickcounter-android-scala.svg)](https://coveralls.io/r/lucoodevcourse/clickcounter-android-scala) 
+[![Download](https://api.bintray.com/packages/lucoodevcourse/generic/clickcounter-android-scala/images/download.svg) ](https://bintray.com/lucoodevcourse/generic/clickcounter-android-scala/_latestVersion)
 
 # Learning Objectives
 
