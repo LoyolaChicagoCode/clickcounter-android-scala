@@ -8,8 +8,6 @@ import android.Keys._
 
 android.Plugin.androidBuild
 
-instrumentSettings
-
 name := "clickcounter-android-scala"
 
 version := "0.1"
