@@ -20,10 +20,10 @@ Android applications using Scala. Its learning objectives are:
     - Unit testing and [Behavior-Driven Development (BDD)](http://en.wikipedia.org/wiki/Behavior-driven_development) 
       with ScalaTest
     - [Mock objects](http://en.wikipedia.org/wiki/Mock_object) with [Mockito](http://mockito.googlecode.com/)
-    - Functional testing (out-of-container) using [Robolectric](http://pivotal.github.com/robolectric/)
+    - Functional testing (out-of-container) using [Robolectric](http://robolectric.org/)
 
 
 # Building and Running
 
-Please refer to [these notes](http://lucoodevcourse.bitbucket.org/notes/scalaandroiddev.html) for details.
+Please refer to [these notes](http://lucoodevcourse.github.io/notes/scalaandroiddev.html) for details.
 
