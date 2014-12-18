@@ -13,11 +13,11 @@ import model.{DefaultBoundedCounter, BoundedCounter}
  * model. The model implementation is configured externally via the resource
  * R.string.model_class.
  */
-class MainActivity extends Activity with TypedActivity with AbstractAdapter {
+class MainActivity extends Activity with TypedActivity with InputListener with ViewUpdater {
 
-  private def TAG = "clickcounter-android-activity"
+  private def TAG = "clickcounter-android-scala"
 
-  // inject the dependency on the model
+  // inject the dependency on the model into the stackable mixins
   override lazy val model = new DefaultBoundedCounter
 
   override def onCreate(savedInstanceState: Bundle) = {
@@ -31,15 +31,5 @@ class MainActivity extends Activity with TypedActivity with AbstractAdapter {
     super.onStart()
     Log.i(TAG, "onStart")
     updateView()
-  }
-
-  /** Updates the concrete view from the model. */
-  override protected def updateView() = {
-    import scala.language.postfixOps
-    // update display
-    findView(TR.textview_value).setText(model.get.toString)
-    // afford controls according to model state
-    findView(TR.button_increment).setEnabled(! model.isFull)
-    findView(TR.button_decrement).setEnabled(! model.isEmpty)
   }
 }

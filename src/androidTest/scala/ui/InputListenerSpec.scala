@@ -1,6 +1,7 @@
 package edu.luc.etl.cs313.scala.clickcounter
 package ui
 
+import android.view.View
 import org.mockito.Mockito._
 import org.scalatest.FunSpec
 import org.scalatest.mock.MockitoSugar
@@ -10,66 +11,46 @@ import model.BoundedCounter
  * A unit test of AbstractAdapter that uses mocking to satisfy the dependencies
  * (collaborators).
  */
-class AdapterSpecs extends FunSpec with MockitoSugar {
+class InputListenerSpec extends FunSpec with MockitoSugar {
 
-  /**
-   * Trait for mock views.
-   */
-  trait View {
-    def update(): Unit
-  }
-
-  /**
-   * Factory method for test fixtures.
-   */
+  /** Factory method for test fixtures. */
   def fixture() = new {
-    // create mock instances of the collaborators
-    val min = 0
-    val max = 10
-    val view = mock[View]
-    val model = mock[BoundedCounter]
-    // stub certain methods
-    when(model.min).thenReturn(min)
-    when(model.max).thenReturn(max)
-    val order = inOrder(model, view)
+    // create fake instances of the collaborators
+    val mdl = mock[BoundedCounter]
     // create subject-under-test (SUT)
-    val mdl = model
-    val adapter = new AbstractAdapter {
+    val adapter = new InputListener {
       override lazy val model = mdl // injected dependency
-      override def updateView() = view.update() // hard-coded dependency
+      override def updateView() = { } // stub - normally provided by mixin
     }
   }
 
   describe("A clickcounter adapter") {
-    it("handles onIncrement") {
+    it("passes onIncrement to the model") {
       // create and import fixture
       val f = fixture()
       import f._
       // exercise SUT
       adapter.onIncrement(null)
       // verify interaction with collaborators
-      order.verify(model).increment()
-      order.verify(view).update()
+      verify(mdl).increment()
     }
-    it("handles onDecrement") {
+    it("passes onDecrement to the model") {
       // create and import fixture
       val f = fixture()
       import f._
       // exercise SUT
       adapter.onDecrement(null)
       // verify interaction with collaborators
-      order.verify(model).decrement()
-      order.verify(view).update()
+      verify(mdl).decrement()
     }
-    it("handles onReset") {
+    it("passes onReset to the model") {
       // create and import fixture
       val f = fixture()
       import f._
       // exercise SUT
       adapter.onReset(null)
       // verify interaction with collaborators
-      order.verify(model).reset()
-      order.verify(view).update()
+      verify(mdl).reset()
     }
   }
 }

@@ -21,8 +21,8 @@ platformTarget in Android := "android-19"
 libraryDependencies ++= Seq(
   "org.robolectric" % "robolectric" % "2.3" % "test",
   "junit" % "junit" % "4.11" % "test",
-  "org.mockito" % "mockito-core" % "1.10.8" % "test",
-  "org.scalatest" %% "scalatest" % "2.2.1" % "test"
+  "org.mockito" % "mockito-core" % "1.10.17" % "test",
+  "org.scalatest" %% "scalatest" % "2.2.3" % "test"
 )
 
 val androidJars = (platformJars in Android, baseDirectory) map {
