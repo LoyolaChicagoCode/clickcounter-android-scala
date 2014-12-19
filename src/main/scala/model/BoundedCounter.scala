@@ -1,11 +1,6 @@
-package edu.luc.etl.cs313.scala.clickcounter
-package model
+package edu.luc.etl.cs313.scala.clickcounter.model
 
-/**
- * A mutable bounded counter abstraction.
- *
- * @author laufer
- */
+/** A mutable bounded counter abstraction. */
 trait BoundedCounter extends Counter {
 
   def min: Int

@@ -30,19 +30,19 @@ trait InputListener {
   def onReset(view: View) = { model.reset() ; updateView() }
 
   /** Updates the view from the model. */
-  protected def updateView(): Unit
+  def updateView(): Unit
 }
 
 /**
  * A view updater mixin as part of the Adapter in the Model-View-Adapter pattern.
  * It implements the `updateView` method to update the view from the model.
  */
-trait ViewUpdater extends TypedViewHolder {
+trait ViewUpdater extends TypedActivityHolder {
 
   protected val model: BoundedCounter
 
   /** Updates the view from the model. */
-  protected def updateView() = {
+  def updateView() = {
     // update display
     findView(TR.textview_value).setText(model.get.toString)
     // afford controls according to model state

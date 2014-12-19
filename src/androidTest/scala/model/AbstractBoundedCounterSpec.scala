@@ -6,7 +6,7 @@ import org.scalatest.{FunSpec, Matchers}
  * An abstract unit test for the bounded counter model.
  * This follows the XUnit Testcase Superclass pattern.
  */
-trait AbstractBoundedCounterSpecs extends FunSpec with Matchers {
+trait AbstractBoundedCounterSpec extends FunSpec with Matchers {
 
   def fixture(): BoundedCounter
 

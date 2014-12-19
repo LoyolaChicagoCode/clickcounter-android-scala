@@ -13,11 +13,11 @@ import model.{DefaultBoundedCounter, BoundedCounter}
  * model. The model implementation is configured externally via the resource
  * R.string.model_class.
  */
-class MainActivity extends Activity with TypedActivity with InputListener with ViewUpdater {
+class MainActivity extends Activity with InputListener with ViewUpdater {
 
   private def TAG = "clickcounter-android-scala"
 
-  // inject the dependency on the model into the stackable mixins
+  // inject the dependency on the model into the stackable mixin traits
   override lazy val model = new DefaultBoundedCounter
 
   override def onCreate(savedInstanceState: Bundle) = {

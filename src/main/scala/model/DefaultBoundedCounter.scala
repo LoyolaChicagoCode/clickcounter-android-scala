@@ -1,5 +1,4 @@
-package edu.luc.etl.cs313.scala.clickcounter
-package model
+package edu.luc.etl.cs313.scala.clickcounter.model
 
 /** A stateful implementation of a bounded counter. */
 class DefaultBoundedCounter(_min: Int, _max: Int) extends BoundedCounter {

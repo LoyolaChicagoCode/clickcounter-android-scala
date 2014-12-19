@@ -1,11 +1,6 @@
-package edu.luc.etl.cs313.scala.clickcounter
-package model
+package edu.luc.etl.cs313.scala.clickcounter.model
 
-/**
- * A mutable counter abstraction.
- *
- * @author laufer
- */
+/** A mutable counter abstraction. */
 trait Counter {
 
   /** Returns the counter value. */

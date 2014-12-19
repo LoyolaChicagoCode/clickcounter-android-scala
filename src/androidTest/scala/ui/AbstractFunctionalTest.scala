@@ -1,30 +1,22 @@
-package edu.luc.etl.cs313.scala.clickcounter
-package ui
+package edu.luc.etl.cs313.scala.clickcounter.ui
 
 import org.junit.Assert._
 import org.junit.Test
+import org.scalatest.mock.MockitoSugar
 
 /**
  * An abstract GUI-based functional test for the clickcounter app.
  * This follows the XUnit Testcase Superclass pattern.
  */
-trait AbstractFunctionalTest {
+trait AbstractFunctionalTest extends MockitoSugar with ViewTestHelper {
 
-  /**
-   * The activity to be provided by concrete subclasses of this test.
-   */
-  protected def activity(): MainActivity
-
-  @Test def testActivityExists(): Unit = {
+  @Test def activityExists(): Unit =
     assertNotNull(activity)
-  }
 
-  @Test def testActivityInitialValue(): Unit = {
-    val t = activity.findView(TR.textview_value)
-    assertEquals(0, t.getText.toString.toInt)
-  }
+  @Test def activityHasCorrectInitialValue(): Unit =
+    assertEquals(0, displayedValue)
 
-  @Test def testActivityScenarioIncReset(): Unit = {
+  @Test def activityScenarioIncReset(): Unit = {
     assertEquals(0, displayedValue)
     assertTrue(incButton.isEnabled)
     assertFalse(decButton.isEnabled)
@@ -41,7 +33,7 @@ trait AbstractFunctionalTest {
     assertTrue(resetButton.isEnabled)
   }
 
-  @Test def testActivityScenarioIncUntilFull(): Unit = {
+  @Test def activityScenarioIncUntilFull(): Unit = {
     assertEquals(0, displayedValue)
     assertTrue(incButton.isEnabled)
     assertFalse(decButton.isEnabled)
@@ -55,14 +47,4 @@ trait AbstractFunctionalTest {
     assertTrue(decButton.isEnabled)
     assertTrue(resetButton.isEnabled)
   }
-
-  // auxiliary methods for easy access to UI widgets
-
-  def displayedValue() = activity.findView(TR.textview_value).getText.toString.toInt
-
-  def incButton() = activity.findView(TR.button_increment)
-
-  def decButton() = activity.findView(TR.button_decrement)
-
-  def resetButton() = activity.findView(TR.button_reset)
 }
