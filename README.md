@@ -22,6 +22,16 @@ Android applications using Scala. Its learning objectives are:
     - [Mock objects](http://en.wikipedia.org/wiki/Mock_object) with [Mockito](http://mockito.googlecode.com/)
     - Functional testing (out-of-container) using [Robolectric](http://robolectric.org/)
 
+# Observations
+
+- Existing isolation frameworks for Scala do not seem to handle dependencies
+  added using the stackable trait (mixin) idiom. It is usually necessary to
+  create one's own fakes, whether they are used as stubs or mocks.
+- Robolectric-based tests cannot run in parallel, though regular unit tests
+  can (and usually should). Therefore, it is easiest just to stack all
+  abstract test superclasses (realized as stackable traits) onto a single
+  concrete subclass (the Robolectric suite).
+
 
 # Building and Running
 
