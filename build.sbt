@@ -19,10 +19,10 @@ scalacOptions in Compile ++= Seq("-feature", "-unchecked", "-deprecation")
 platformTarget in Android := "android-19"
 
 libraryDependencies ++= Seq(
-  "org.robolectric" % "robolectric" % "2.3" % "test",
-  "junit" % "junit" % "4.11" % "test",
-  "org.mockito" % "mockito-core" % "1.10.17" % "test",
-  "org.scalatest" %% "scalatest" % "2.2.3" % "test"
+  "org.robolectric" % "robolectric" % "2.3" % Test,
+  "junit" % "junit" % "4.11" % Test,
+  "org.mockito" % "mockito-core" % "1.10.17" % Test,
+  "org.scalatest" %% "scalatest" % "2.2.3" % Test
 )
 
 val androidJars = (platformJars in Android, baseDirectory) map {
