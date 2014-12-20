@@ -1,13 +1,14 @@
 package edu.luc.etl.cs313.scala.clickcounter
 package ui
 
+import android.view.View
 import org.mockito.Mockito._
 import org.scalatest.FunSpec
 import org.scalatest.mock.MockitoSugar
 import model.BoundedCounter
 
 /**
- * A concrete unit test of InputListener that uses stubbing and mocking
+ * A concrete unit test for InputListener that uses stubbing and mocking
  * to replace the real dependencies (collaborators) and test the
  * interactions.
  */
@@ -29,13 +30,15 @@ class InputListenerSpec extends FunSpec with MockitoSugar {
     }
   }
 
+  val DUMMY: View = null
+
   describe("A clickcounter input listener") {
     it("passes onIncrement to the model") {
       // create and import fixture
       val f = fixture()
       import f._
       // exercise SUT
-      adapter.onIncrement(null)
+      adapter.onIncrement(DUMMY)
       // verify interaction with the mock
       verify(mdl).increment()
     }
@@ -44,7 +47,7 @@ class InputListenerSpec extends FunSpec with MockitoSugar {
       val f = fixture()
       import f._
       // exercise SUT
-      adapter.onDecrement(null)
+      adapter.onDecrement(DUMMY)
       // verify interaction with the mock
       verify(mdl).decrement()
     }
@@ -53,7 +56,7 @@ class InputListenerSpec extends FunSpec with MockitoSugar {
       val f = fixture()
       import f._
       // exercise SUT
-      adapter.onReset(null)
+      adapter.onReset(DUMMY)
       // verify interaction with the mock
       verify(mdl).reset()
     }
