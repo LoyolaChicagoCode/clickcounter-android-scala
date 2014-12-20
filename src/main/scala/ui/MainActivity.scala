@@ -4,7 +4,7 @@ package ui
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
-import model.{DefaultBoundedCounter, BoundedCounter}
+import model.DefaultBoundedCounter
 
 /**
  * The main Android activity, which provides the required lifecycle methods.
