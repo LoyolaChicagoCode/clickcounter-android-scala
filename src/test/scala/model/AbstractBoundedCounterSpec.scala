@@ -4,7 +4,8 @@ import org.scalatest.{FunSpec, Matchers}
 
 /**
  * An abstract unit test for the bounded counter model.
- * This follows the XUnit Testcase Superclass pattern.
+ * This is a simple state-based unit test.
+ * It follows the XUnit Testcase Superclass pattern.
  */
 trait AbstractBoundedCounterSpec extends FunSpec with Matchers {
 

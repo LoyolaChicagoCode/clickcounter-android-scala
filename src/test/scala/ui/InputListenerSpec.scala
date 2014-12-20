@@ -8,7 +8,8 @@ import model.BoundedCounter
 
 /**
  * A concrete unit test of InputListener that uses stubbing and mocking
- * to replace the real dependencies (collaborators).
+ * to replace the real dependencies (collaborators) and test the
+ * interactions.
  */
 class InputListenerSpec extends FunSpec with MockitoSugar {
 

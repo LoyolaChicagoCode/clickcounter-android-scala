@@ -7,8 +7,12 @@ import org.scalatest.mock.MockitoSugar
 import model.BoundedCounter
 
 /**
- * An abstract GUI-based functional test for the clickcounter app.
- * This follows the XUnit Testcase Superclass pattern.
+ * An abstract unit test for the view updater.
+ * This is an interaction test of an object with dependencies
+ * (collaborators). Specifically to Scala, one of the dependencies
+ * is a stackable trait (mixin); we therefore mix in a fake of the
+ * production trait.
+ * This test follows the XUnit Testcase Superclass pattern.
  */
 trait AbstractViewUpdaterTest extends MockitoSugar with ViewTestHelper {
 
