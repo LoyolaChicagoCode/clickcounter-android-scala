@@ -23,7 +23,7 @@ trait AbstractViewUpdaterTest extends MockitoSugar with ViewTestHelper {
     trait FakeTypedActivityHolder extends TypedActivityHolder {
       override def findViewById(id: Int) = activity.findViewById(id)
     }
-    // create subject-under-test (SUT)
+    // create system-under-test (SUT)
     val updater = new ViewUpdater with FakeTypedActivityHolder {
       override lazy val model = mdl // injected dependency
     }

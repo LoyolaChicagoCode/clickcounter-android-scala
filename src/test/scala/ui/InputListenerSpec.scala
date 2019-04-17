@@ -24,7 +24,7 @@ class InputListenerSpec extends FunSpec with MockitoSugar {
     trait FakeViewUpdater {
       def updateView() = { }
     }
-    // create subject-under-test (SUT)
+    // create system-under-test (SUT)
     val adapter = new InputListener with FakeViewUpdater {
       override lazy val model = mdl // injected dependency
     }
